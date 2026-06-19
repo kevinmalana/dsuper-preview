@@ -55,10 +55,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={inter.variable}>
+    <html lang="en-AU" className={`${inter.variable} scroll-smooth`}>
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-20 min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
