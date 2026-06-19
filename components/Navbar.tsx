@@ -69,15 +69,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors shadow-md shadow-red-600/20 hover:shadow-red-600/40"
-            >
-              Get Started
-            </Link>
-          </div>
+          {/* Desktop — no CTA button per client request */}
 
           {/* Mobile Menu Button */}
           <button
@@ -118,15 +110,7 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-4 flex flex-col gap-3">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="w-full text-center px-5 py-3 rounded-lg text-base font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
+
           </div>
         </div>
       </nav>

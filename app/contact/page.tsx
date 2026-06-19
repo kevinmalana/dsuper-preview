@@ -79,9 +79,12 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-500">Call Us</p>
-                      <p className="text-base font-semibold text-gray-900">
-                        Please email us to arrange a call
-                      </p>
+                      <a
+                        href="tel:+61415670280"
+                        className="text-base font-semibold text-gray-900 hover:text-red-600 transition"
+                      >
+                        0415 670 280
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
