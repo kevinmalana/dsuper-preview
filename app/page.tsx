@@ -110,38 +110,32 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Visual (Dashboard Mockup) */}
+            {/* Right Visual (Trust Signals) */}
             <div className="hidden lg:block relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-red-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
-              <div className="relative bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-gray-100 ring-1 ring-black/5">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-bold text-gray-900">Fund Compliance Dashboard</h3>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Live</span>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                    <span className="text-gray-600 font-medium text-sm">Compliance Status</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">100% Compliant</span>
-                  </div>
-                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                    <span className="text-gray-600 font-medium text-sm">Tax Return Lodgement</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">On Track</span>
-                  </div>
-                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                    <span className="text-gray-600 font-medium text-sm">Audit Coordination</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">Completed</span>
-                  </div>
-                  <div className="mt-6 pt-6 border-t border-gray-100">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
-                        {Icons.shield}
+              <div className="absolute inset-0 bg-gradient-to-tr from-red-500/10 to-gray-900/5 rounded-3xl blur-3xl" />
+              <div className="relative bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 ring-1 ring-black/5">
+                <h3 className="text-lg font-bold text-gray-900 mb-5">Why choose dSuper</h3>
+                <ul className="space-y-4">
+                  {[
+                    "CPA Australia Member",
+                    "Registered Tax Agent",
+                    "100% Independently Owned",
+                    "Flat Fee — No Surprises",
+                    "Unlimited Technical Support",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+                        {Icons.checkCircle}
                       </div>
-                      <div>
-                        <p className="text-sm font-bold text-gray-900">CPA Verified</p>
-                        <p className="text-xs text-gray-500">Last reviewed 2 days ago</p>
-                      </div>
-                    </div>
-                  </div>
+                      <span className="text-gray-700 font-medium text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <blockquote className="text-sm text-gray-500 italic leading-relaxed">
+                    &ldquo;We aim to make managing your SMSF simple and efficient by offering a complete range of services at a fair and transparent price.&rdquo;
+                  </blockquote>
+                  <p className="text-xs text-red-600 font-semibold mt-2">— dSuper Team</p>
                 </div>
               </div>
             </div>
