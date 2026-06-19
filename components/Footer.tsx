@@ -128,11 +128,11 @@ export default function Footer() {
 
         {/* Credentials Strip */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 py-8">
-          <Image src="/logo-1-tpb.jpg" alt="Tax Practitioners Board" width={110} height={44} className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
-          <div className="hidden sm:block w-px h-8" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
-          <Image src="/logo-2-smsf.jpg" alt="SMSF Association Specialist" width={110} height={44} className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
-          <div className="hidden sm:block w-px h-8" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
-          <Image src="/logo-3-cpa.jpg" alt="CPA Australia" width={110} height={44} className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+          <Image src="/logo-1-tpb.jpg" alt="Tax Practitioners Board" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+          <div className="hidden sm:block w-px h-10" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
+          <Image src="/logo-2-smsf.jpg" alt="SMSF Association Specialist" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+          <div className="hidden sm:block w-px h-10" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
+          <Image src="/logo-3-cpa.jpg" alt="CPA Australia" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         {/* Bottom Bar */}
