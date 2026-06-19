@@ -27,235 +27,249 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Split Layout */}
+      {/* Main Content — 5-col grid */}
       <section className="py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left: Trust signals */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Why work with dSuper?
-              </h2>
-              <div className="space-y-5">
-                {[
-                  {
-                    title: "CPA-Qualified Team",
-                    desc: "Our principal is a Certified Practising Accountant with specialist SMSF expertise.",
-                  },
-                  {
-                    title: "Registered Tax Agent",
-                    desc: "We are authorised to deal directly with the ATO on your behalf.",
-                  },
-                  {
-                    title: "Independent & Unbiased",
-                    desc: "No commissions, no product flogging. Pure compliance and administration.",
-                  },
-                  {
-                    title: "Fixed Pricing",
-                    desc: "No hourly billing surprises. Everything quoted upfront.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center">
-                        <svg
-                          className="w-5 h-5 text-red-600"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            {/* Left Column: Info (2 cols) */}
+            <div className="lg:col-span-2 space-y-8">
+              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h2 className="text-xl font-bold text-gray-900 mb-6">
+                  Get in Touch
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600">{item.desc}</p>
+                      <p className="text-sm font-medium text-gray-500">
+                        Email Us
+                      </p>
+                      <a
+                        href="mailto:hello@dsuper.com.au"
+                        className="text-base font-semibold text-gray-900 hover:text-red-600 transition"
+                      >
+                        hello@dsuper.com.au
+                      </a>
                     </div>
                   </div>
-                ))}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-500">
+                        Call Us
+                      </p>
+                      <a
+                        href="tel:+61000000000"
+                        className="text-base font-semibold text-gray-900 hover:text-red-600 transition"
+                      >
+                        1300 DSUPER
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-500">
+                        Office Hours
+                      </p>
+                      <p className="text-base font-semibold text-gray-900">
+                        Mon - Fri: 9:00 AM - 5:00 PM (AEST)
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-10 p-6 rounded-2xl bg-red-50 border border-red-100">
-                <p className="text-sm font-semibold text-red-700 uppercase tracking-wider mb-2">
-                  Existing Client?
-                </p>
-                <p className="text-gray-700">
-                  For urgent enquiries about an existing fund, email us directly
-                  at{" "}
-                  <a
-                    href="mailto:contact@dsuper.com.au"
-                    className="text-red-600 font-semibold underline underline-offset-2"
-                  >
-                    contact@dsuper.com.au
-                  </a>{" "}
-                  with your fund name and ABN for priority service.
-                </p>
+              {/* Dark trust card */}
+              <div className="bg-gray-900 p-8 rounded-2xl text-white">
+                <h3 className="text-lg font-bold mb-2">
+                  Why partner with us?
+                </h3>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <svg
+                      className="w-4 h-4 text-red-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    CPA Certified & Registered Tax Agent
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg
+                      className="w-4 h-4 text-red-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    100% Independent & Unbiased
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg
+                      className="w-4 h-4 text-red-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    Transparent Flat-Fee Pricing
+                  </li>
+                </ul>
               </div>
             </div>
 
-            {/* Right: Contact Form */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
-                Send us a message
-              </h2>
-              <form
-                action="https://formspree.io/f/your-form-id"
-                method="POST"
-                className="space-y-5"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Right Column: Form (3 cols) */}
+            <div className="lg:col-span-3">
+              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Send us a message
+                </h2>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition outline-none"
+                        placeholder="John Smith"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition outline-none"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label
-                      htmlFor="firstName"
-                      className="block text-sm font-medium text-gray-700 mb-1.5"
+                      htmlFor="type"
+                      className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      First Name <span className="text-red-500">*</span>
+                      I am a...
                     </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors"
-                      placeholder="John"
-                    />
+                    <select
+                      id="type"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition outline-none bg-white"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select your role
+                      </option>
+                      <option>Direct Trustee (Managing my own SMSF)</option>
+                      <option>Financial Planner / Adviser</option>
+                      <option>Accountant</option>
+                      <option>Other</option>
+                    </select>
                   </div>
+
                   <div>
                     <label
-                      htmlFor="lastName"
-                      className="block text-sm font-medium text-gray-700 mb-1.5"
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Last Name <span className="text-red-500">*</span>
+                      How can we help?
                     </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors"
-                      placeholder="Smith"
+                    <textarea
+                      id="message"
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition outline-none resize-none"
+                      placeholder="Tell us about your SMSF needs..."
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1.5"
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-4 rounded-xl text-white font-semibold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 hover:shadow-red-600/40 transition-all duration-300"
                   >
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+                    Send Enquiry
+                  </button>
 
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1.5"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors"
-                    placeholder="0400 000 000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="enquiry"
-                    className="block text-sm font-medium text-gray-700 mb-1.5"
-                  >
-                    What are you interested in?{" "}
-                    <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="enquiry"
-                    name="enquiry"
-                    required
-                    defaultValue=""
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors"
-                  >
-                    <option value="" disabled>
-                      Select an option
-                    </option>
-                    <option value="setup">SMSF Setup</option>
-                    <option value="transfer">SMSF Transfer</option>
-                    <option value="admin">Ongoing Administration</option>
-                    <option value="compliance">Compliance Review</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1.5"
-                  >
-                    Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-colors resize-none"
-                    placeholder="Tell us about your situation and what you need help with..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 rounded-xl text-white font-semibold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 hover:shadow-red-600/40 transition-all duration-300"
-                >
-                  Send Enquiry
-                </button>
-
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting, you agree to our{" "}
-                  <Link
-                    href="/privacy"
-                    className="text-red-600 underline underline-offset-2"
-                  >
-                    Privacy Policy
-                  </Link>
-                  . We&apos;ll never share your details.
-                </p>
-              </form>
+                  <p className="text-xs text-gray-500 text-center">
+                    By submitting, you agree to our{" "}
+                    <Link
+                      href="/privacy"
+                      className="text-red-600 underline underline-offset-2"
+                    >
+                      Privacy Policy
+                    </Link>
+                    . We&apos;ll never share your details.
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Banner */}
-      <section className="py-12 bg-red-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-red-100 mb-2">Prefer to talk?</p>
-          <p className="text-2xl font-bold text-white">
-            Call us on{" "}
-            <a href="tel:1300123456" className="underline underline-offset-4">
-              1300 123 456
-            </a>
-          </p>
-          <p className="text-red-200 text-sm mt-2">
-            Monday–Friday, 9am–5pm AEDT
-          </p>
         </div>
       </section>
     </div>
