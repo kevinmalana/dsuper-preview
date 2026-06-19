@@ -251,9 +251,10 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 rounded-xl text-white font-semibold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 hover:shadow-red-600/40 transition-all duration-300"
+                    className="w-full md:w-auto px-8 py-4 rounded-lg text-base font-semibold text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
-                    Send Enquiry
+                    Send Message
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
                   </button>
 
                   <p className="text-xs text-gray-500 text-center">
