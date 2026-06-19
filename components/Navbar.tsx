@@ -40,11 +40,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
             <Image
-              src="/dsuper-logo-footer.png"
+              src="/dsuper-logo.png"
               alt="dSuper SMSF"
-              width={140}
-              height={50}
-              className="h-10 w-auto object-contain"
+              width={160}
+              height={48}
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>
