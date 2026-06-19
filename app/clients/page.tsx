@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 const clientTypes = [
   {
     title: "Financial Planners & Advisers",
-    icon: "👔",
     intro: "Partner with dSuper to provide seamless SMSF administration for your clients. We handle the compliance so you can focus on delivering strategic advice.",
     benefits: [
       "Dedicated point of contact for your practice",
@@ -22,7 +21,6 @@ const clientTypes = [
   },
   {
     title: "Accountants",
-    icon: "🧮",
     intro: "White-label SMSF administration that integrates seamlessly with your accounting practice. Quality compliance work you can trust and confidently present as your own.",
     benefits: [
       "White-label service option available",
@@ -35,7 +33,6 @@ const clientTypes = [
   },
   {
     title: "Direct Trustees",
-    icon: "🏠",
     intro: "Take control of your retirement with expert support behind you. Whether you're setting up a new SMSF or looking for better administration, we're here to help.",
     benefits: [
       "Direct access to qualified SMSF accountants",
@@ -50,38 +47,59 @@ const clientTypes = [
 
 export default function ClientsPage() {
   return (
-    <div>
+    <div className="bg-gray-50">
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}>
-        <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: "#e6141e" }} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#1a1a1a" }}>Who We Work With</h1>
-          <p className="text-lg max-w-2xl" style={{ color: "#64748b" }}>We serve three distinct client groups, each with tailored SMSF administration solutions.</p>
+      <section className="pt-20 pb-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-red-600 bg-red-50 rounded-full mb-6 border border-red-100">
+            Our Clients
+          </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            Who We Work With
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We serve three distinct client groups, each with tailored SMSF administration solutions.
+          </p>
         </div>
       </section>
 
       {/* Client Sections */}
       {clientTypes.map((client, i) => (
-        <section key={client.title} className="py-20" style={{ backgroundColor: i % 2 === 0 ? "#ffffff" : "#f8fafc" }}>
+        <section
+          key={client.title}
+          className={`py-16 lg:py-20 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
-                <div className="text-5xl mb-4">{client.icon}</div>
-                <h2 className="text-3xl font-bold mb-4" style={{ color: "#1a1a1a" }}>{client.title}</h2>
-                <p className="leading-relaxed mb-6" style={{ color: "#64748b" }}>{client.intro}</p>
-                <blockquote className="pl-4 mb-6 italic" style={{ borderLeft: "3px solid #e6141e", color: "#475569" }}>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {client.title}
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {client.intro}
+                </p>
+                <blockquote className="pl-4 mb-6 italic text-gray-700 border-l-4 border-red-600">
                   {client.quote}
                 </blockquote>
-                <Link href="/contact" className="inline-block px-6 py-3 rounded-lg text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: "#e6141e" }}>
+                <Link
+                  href="/contact"
+                  className="inline-block px-6 py-3 rounded-lg text-white font-semibold text-sm bg-red-600 hover:bg-red-700 transition-colors shadow-md shadow-red-600/20"
+                >
                   Get in Touch
                 </Link>
               </div>
-              <div className="rounded-xl p-8" style={{ backgroundColor: i % 2 === 0 ? "#f8fafc" : "#ffffff", border: "1px solid #e2e8f0" }}>
-                <h3 className="font-bold text-lg mb-4" style={{ color: "#1a1a1a" }}>How We Help</h3>
+              <div className={`rounded-2xl p-8 border border-gray-200 ${
+                i % 2 === 0 ? "bg-gray-50" : "bg-white"
+              }`}>
+                <h3 className="font-bold text-lg mb-4 text-gray-900">
+                  How We Help
+                </h3>
                 <ul className="space-y-3">
                   {client.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm" style={{ color: "#475569" }}>
-                      <span className="font-bold mt-0.5" style={{ color: "#8cd278" }}>✓</span>
+                    <li key={b} className="flex items-start gap-3 text-sm text-gray-700">
+                      <svg className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
                       {b}
                     </li>
                   ))}
@@ -93,11 +111,18 @@ export default function ClientsPage() {
       ))}
 
       {/* CTA */}
-      <section className="py-16" style={{ backgroundColor: "#1a1a1a" }}>
+      <section className="py-16 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to work with dSuper?</h2>
-          <p className="text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>Get in touch for a free initial consultation.</p>
-          <Link href="/contact" className="inline-block px-10 py-4 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: "#e6141e" }}>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to work with dSuper?
+          </h2>
+          <p className="text-lg text-gray-400 mb-8">
+            Get in touch for a free initial consultation.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-4 rounded-xl text-white font-semibold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 hover:shadow-red-600/40 transition-all duration-300"
+          >
             Contact Us
           </Link>
         </div>

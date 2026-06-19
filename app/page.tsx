@@ -26,7 +26,7 @@ const Icons = {
 
 const services = [
   { title: "SMSF Administration", desc: "Full compliance, tax returns, audit coordination — everything your fund needs to stay compliant year-round.", icon: Icons.admin, href: "/services" },
-  { title: "SMSF Setup", desc: "From $1,000 — online, fast, fixed price. Individual or Corporate Trustee. We handle everything.", icon: Icons.setup, href: "/setup" },
+  { title: "SMSF Setup", desc: "From $1,000 — online, fast, fixed price. Individual or Corporate Trustee. We handle everything.", icon: Icons.setup, href: "/smsf-setup" },
   { title: "SMSF Documents", desc: "Trust deeds, pension commencement, change of trustee, fund wind-up and more — precise documents at a fair price.", icon: Icons.doc, href: "/services" },
 ];
 

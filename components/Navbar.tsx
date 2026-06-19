@@ -21,9 +21,10 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Setup", href: "/setup" },
-    { name: "About Us", href: "/about" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "Transfer", href: "/transfer" },
+    { name: "Setup", href: "/smsf-setup" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -72,12 +73,6 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-sm"
-            >
-              Client Login
-            </Link>
-            <Link
-              href="/contact"
               className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors shadow-md shadow-red-600/20 hover:shadow-red-600/40"
             >
               Get Started
@@ -105,7 +100,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-96 pb-6" : "max-h-0"
+            isOpen ? "max-h-[420px] pb-6" : "max-h-0"
           }`}
         >
           <div className="flex flex-col space-y-2 pt-2 border-t border-gray-100">
