@@ -1,149 +1,104 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+const footerLinks = {
+  services: [
+    { name: "SMSF Administration", href: "/services" },
+    { name: "SMSF Setup", href: "/setup" },
+    { name: "SMSF Documents", href: "/services" },
+    { name: "Pension Services", href: "/services" },
+  ],
+  company: [
+    { name: "About Us", href: "/about" },
+    { name: "Why Choose Us", href: "/#features" },
+    { name: "Our Process", href: "/#process" },
+    { name: "Contact", href: "/contact" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Disclaimer", href: "/disclaimer" },
+    { name: "Disclosure", href: "/disclosure" },
+  ],
+};
+
+function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    services: [
-      { name: "SMSF Administration", href: "/services" },
-      { name: "SMSF Setup", href: "/setup" },
-      { name: "SMSF Documents", href: "/services" },
-      { name: "Pension Services", href: "/services" },
-    ],
-    company: [
-      { name: "About Us", href: "/about" },
-      { name: "Why Choose Us", href: "/#features" },
-      { name: "Our Process", href: "/#process" },
-      { name: "Contact", href: "/contact" },
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Disclaimer", href: "/disclaimer" },
-      { name: "FSG / CRS", href: "/compliance" },
-    ],
-  };
-
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        {/* Top Section: Brand & CTA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-gray-800">
-          <div className="lg:col-span-5">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <Image
-                src="/dsuper-logo-footer.png"
-                alt="dSuper SMSF"
-                width={140}
-                height={50}
-                className="h-10 w-auto object-contain"
-              />
+    <footer className="bg-[#0b1327] text-slate-300">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="grid gap-12 border-b border-white/10 pb-14 lg:grid-cols-[1.05fr_1.4fr] lg:gap-20">
+          <div>
+            <Link href="/" className="inline-flex min-h-0" aria-label="dSuper home">
+              <Image src="/dsuper-logo-footer.png" alt="dSuper SMSF" width={160} height={55} className="h-14 w-auto object-contain" />
             </Link>
-            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+            <p className="mt-6 max-w-md text-sm leading-7 text-slate-400">
               Expert CPA-led SMSF administration services for Financial Planners, Accountants, and Direct Trustees across Australia. Independent, transparent, and focused on quality.
             </p>
-            <div className="flex items-center gap-4">
-              <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700 text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                CPA Certified
-              </div>
-              <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700 text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                Registered Tax Agent
-              </div>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {["CPA Certified", "Registered Tax Agent"].map((item) => (
+                <span key={item} className="border border-white/15 bg-white/[.04] px-3 py-2 text-[.68rem] font-semibold uppercase tracking-[.13em] text-slate-300">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* CTA Card */}
-          <div className="lg:col-span-7 flex items-center justify-start lg:justify-end">
-            <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 max-w-md w-full">
-              <h3 className="text-xl font-bold text-white mb-2">Ready to simplify your SMSF?</h3>
-              <p className="text-gray-400 text-sm mb-6">We respond within 1 business day and offer a free initial consultation.</p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg text-base font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors shadow-lg shadow-red-600/10"
-              >
-                Contact Us Today
-              </Link>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
+            {Object.entries(footerLinks).map(([heading, links]) => (
+              <div key={heading}>
+                <h3 className="text-xs font-semibold uppercase tracking-[.16em] text-white">{heading}</h3>
+                <ul className="mt-5 space-y-3">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <Link href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">{link.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-[.16em] text-white">Contact</h3>
+              <ul className="mt-5 space-y-3 text-sm">
+                <li><a href="mailto:info@dsuper.com.au" className="text-slate-400 transition-colors hover:text-white">info@dsuper.com.au</a></li>
+                <li><a href="tel:0415670280" className="text-slate-400 transition-colors hover:text-white">0415 670 280</a></li>
+                <li className="text-xs leading-5 text-slate-500">We respond within 1 business day</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Middle Section: Link Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-b border-gray-800">
+        <div className="grid gap-8 border-b border-white/10 py-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-xl font-medium text-white">Ready to simplify your SMSF?</h3>
+            <p className="mt-2 text-sm text-slate-400">We respond within 1 business day and offer a free initial consultation.</p>
           </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="mailto:info@dsuper.com.au" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  info@dsuper.com.au
-                </a>
-              </li>
-              <li>
-                <a href="tel:0415670280" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  0415 670 280
-                </a>
-              </li>
-              <li>
-                <span className="text-sm text-gray-500">We respond within 1 business day</span>
-              </li>
-            </ul>
+          <Link href="/contact" className="ds-button-primary w-full sm:w-auto">Contact Us Today <ArrowIcon /></Link>
+        </div>
+
+        <div className="flex flex-col gap-8 py-10 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs font-semibold uppercase tracking-[.16em] text-slate-500">Professional affiliations</p>
+          <div className="flex flex-wrap items-center gap-5 sm:gap-8">
+            <Image src="/logo-1-tpb.jpg" alt="Tax Practitioners Board" width={110} height={44} loading="eager" className="h-12 w-auto bg-white object-contain opacity-80 transition-opacity hover:opacity-100" />
+            <Image src="/logo-2-smsf.jpg" alt="SMSF Association Specialist" width={110} height={44} loading="eager" className="h-12 w-auto bg-white object-contain opacity-80 transition-opacity hover:opacity-100" />
+            <Image src="/logo-3-cpa.jpg" alt="CPA Australia" width={110} height={44} loading="eager" className="h-12 w-auto bg-white object-contain opacity-80 transition-opacity hover:opacity-100" />
           </div>
         </div>
 
-        {/* Credentials Strip */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 py-8">
-          <Image src="/logo-1-tpb.jpg" alt="Tax Practitioners Board" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
-          <div className="hidden sm:block w-px h-10" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
-          <Image src="/logo-2-smsf.jpg" alt="SMSF Association Specialist" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
-          <div className="hidden sm:block w-px h-10" style={{ backgroundColor: "rgba(255,255,255,0.08)" }} />
-          <Image src="/logo-3-cpa.jpg" alt="CPA Australia" width={110} height={44} className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-800">
-          <p className="text-xs text-gray-500">
-            © {currentYear} dSuper SMSF. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy</Link>
-            <Link href="/disclaimer" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Disclaimer</Link>
-            <Link href="/disclosure" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Disclosure</Link>
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {currentYear} dSuper SMSF. All rights reserved.</p>
+          <div className="flex flex-wrap gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-slate-300">Privacy</Link>
+            <Link href="/disclaimer" className="transition-colors hover:text-slate-300">Disclaimer</Link>
+            <Link href="/disclosure" className="transition-colors hover:text-slate-300">Disclosure</Link>
           </div>
         </div>
       </div>

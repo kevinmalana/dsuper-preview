@@ -26,6 +26,132 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --ds-navy: #101a33;
+  --ds-navy-soft: #182541;
+  --ds-red: #c8102e;
+  --ds-red-dark: #a70e27;
+  --ds-slate: #526078;
+}
+
+.ds-hero {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.96) 62%, rgba(254, 242, 242, 0.82));
+}
+
+.ds-hero-grid {
+  background-image: linear-gradient(rgba(15, 28, 63, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 28, 63, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 86%);
+}
+
+.ds-hero-glow {
+  background: rgba(200, 16, 46, 0.1);
+  filter: blur(56px);
+}
+
+.ds-trust-panel,
+.ds-cta {
+  background: radial-gradient(circle at 90% 5%, rgba(200, 16, 46, 0.22), transparent 34%), var(--ds-navy);
+  box-shadow: 0 35px 70px -38px rgba(15, 28, 63, 0.62), 0 20px 35px -28px rgba(15, 28, 63, 0.5);
+}
+
+.ds-button-primary,
+.ds-button-secondary,
+.ds-button-dark {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.3rem;
+  border: 1px solid transparent;
+  font-size: 0.925rem;
+  font-weight: 650;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.ds-button-primary {
+  background: var(--ds-red);
+  color: white;
+  box-shadow: 0 16px 28px -18px rgba(200, 16, 46, 0.8);
+}
+
+.ds-button-primary:hover {
+  background: var(--ds-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px -18px rgba(200, 16, 46, 0.85);
+}
+
+.ds-button-secondary {
+  border-color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ds-navy);
+}
+
+.ds-button-secondary:hover {
+  border-color: #94a3b8;
+  background: white;
+  transform: translateY(-2px);
+}
+
+.ds-button-dark {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.ds-button-dark:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.ds-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--ds-red);
+}
+
+.ds-section-title {
+  font-size: clamp(2.4rem, 5vw, 4.75rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: var(--ds-navy);
+}
+
+.ds-section-title.ds-title-light { color: white; }
+
+.ds-service::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--ds-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms ease;
+}
+
+.ds-service:hover::after { transform: scaleX(1); }
+
+.ds-client-card {
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 20px 45px -36px rgba(15, 28, 63, 0.5);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.ds-client-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 16, 46, 0.28);
+  box-shadow: 0 30px 55px -36px rgba(15, 28, 63, 0.66);
+}
+
 /* ─── Animations ─── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(28px); }
@@ -178,4 +304,13 @@ body { overflow-x: hidden; }
 @media (max-width: 640px) {
   /* Touch-friendly tap targets */
   a, button { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
