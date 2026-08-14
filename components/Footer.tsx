@@ -70,7 +70,7 @@ export default function Footer() {
               <ul className="mt-5 space-y-3 text-sm">
                 <li><a href="mailto:info@dsuper.com.au" className="text-slate-400 transition-colors hover:text-white">info@dsuper.com.au</a></li>
                 <li><a href="tel:0415670280" className="text-slate-400 transition-colors hover:text-white">0415 670 280</a></li>
-                <li className="text-xs leading-5 text-slate-500">We respond within 1 business day</li>
+                <li className="text-xs leading-5 text-slate-400">We respond within 1 business day</li>
               </ul>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-8 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs font-semibold uppercase tracking-[.16em] text-slate-500">Professional affiliations</p>
+          <p className="text-xs font-semibold uppercase tracking-[.16em] text-slate-400">Professional affiliations</p>
           <div className="flex flex-wrap items-center gap-5 sm:gap-8">
             <Image src="/logo-1-tpb.webp" alt="Tax Practitioners Board" width={110} height={44} loading="eager" className="h-12 w-auto bg-white object-contain opacity-80 transition-opacity hover:opacity-100" />
             <Image src="/logo-2-smsf.webp" alt="SMSF Association Specialist" width={110} height={44} loading="eager" className="h-12 w-auto bg-white object-contain opacity-80 transition-opacity hover:opacity-100" />
@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} dSuper SMSF. All rights reserved.</p>
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy" className="transition-colors hover:text-slate-300">Privacy</Link>

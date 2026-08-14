@@ -40,7 +40,7 @@ const services = [
   {
     title: "SMSF Setup",
     desc: "From $1,000 — online, fast, fixed price. Individual or Corporate Trustee. We handle everything.",
-    href: "/smsf-setup",
+    href: "/setup",
     type: "setup" as const,
     number: "02",
   },

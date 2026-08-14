@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Transfer", href: "/transfer" },
-  { name: "Setup", href: "/smsf-setup" },
+  { name: "Setup", href: "/setup" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
